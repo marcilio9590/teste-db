@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="myApp">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ateliê Tia Moça</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/custom-styles.css">
+    <link rel="stylesheet" href="css/component.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <base href="/">
+</head>
+
+<body>
+    <div ng-controller="indexCtrl">
+        <div class="wrap-bg">
+            <div class="site-header">
+                <div class="logo">
+                    <h1 id="titleAtelie">Ateliê Tia Moça</h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="banner">
+                    <div class="carousel slide" id="myCarousel">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="itemsCarousel" src="img/carousel/logo.jpg" alt="">
+                            </div>
+                            <div class="item" ng-repeat="item in imagensCarrosel">
+                                <img class="itemsCarousel" ng-src="{{item.caminho}}" />
+                            </div>
+                        </div>
+                        <!-- Carousel nav -->
+                        <a data-slide="prev" href="#myCarousel" class="carousel-control left"><i class="fa fa-chevron-left"></i></a>
+                        <a data-slide="next" href="#myCarousel" class="carousel-control right"><i class="fa fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="navbar">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <i class="fw-icon-th-list"></i>
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active border-left"><a ui-sref="home">Início</a></li>
+                        <li><a ui-sref="about">Sobre Nós</a></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <div class="mini-menu">
+                <label>
+          <select ng-change="go(page)" ng-model="page" class="selectnav">
+            <option value="home" selected="">Início</option>
+            <option value="about">Sobre Nós</option>
+            <option value="#">Produtos</option>
+            <option value="#">Contato</option>
+          </select>
+          </label>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-light-gray">
+        <div class="main-content">
+            <div ui-view></div>
+        </div>
+    </div>
+
+
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="copy-rights">
+                        Copyright (c) websitename. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content">
+            <p class="last">Designed By: <a href="http://www.alltemplateneeds.com">www.alltemplateneeds.com</a></p>
+            Images from: <a href="http://www.wallcoo.net">www.wallcoo.net</a>
+        </div>
+    </div>
+
+    <!-- /container -->
+
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="angular/index.js"></script>
+    <script src="angular/config.js"></script>
+    <script src="controllers/indexCtrl.js"></script>
+    <script src="controllers/aboutController.js"></script>
+</body>
+
+</html>
